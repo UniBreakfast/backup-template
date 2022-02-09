@@ -1,6 +1,9 @@
 body {
-  font: 18px Trebuchet MS, Helvetica, Arial, sans-serif;
   background: cornsilk;
+}
+
+body, input, textarea, button {
+  font: 18px Trebuchet MS, Helvetica, Arial, sans-serif;
 }
 
 ul {
@@ -49,4 +52,9 @@ a:hover {
 
 main {
   padding: 0 15px;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
 }
