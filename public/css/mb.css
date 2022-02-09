@@ -1,0 +1,49 @@
+form h4 {
+  text-align: center;
+}
+
+form label {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+form>* {
+  margin: 4px;
+}
+
+form textarea {
+  resize: none;
+  width: calc(min(98vw, 1200px) - 115px);
+  margin-left: 5px;
+}
+
+form input {
+  width: calc(min(98vw, 1200px) - 400px);
+  min-width: 200px;
+  margin-left: 5px;
+}
+
+form button {
+  float: right;
+  margin-right: 1.2vw;
+}
+
+.message {
+  border-radius: 2vw;
+  border: 2px solid #630;
+  margin-bottom: 12px;
+  padding: 0 15px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0 40px;
+  flex-wrap: wrap;
+}
+
+.info-row>* {
+  margin: 0 10px 10px;
+  white-space: nowrap;
+}

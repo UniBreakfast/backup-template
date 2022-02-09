@@ -28,42 +28,48 @@
       </nav>
     </header>
 
-    <form action="/api/message" method="POST" id="addMessage">
-      <h3>Добавить сообщение</h3>
-      <label>
-        Текст: <input name="text">
-      </label>
-      <label>
-        Автор: <input name="author">
-      </label>
-      <button>разместить сообщение</button>
-    </form>
+    <main>
+      <div class="container">
+        <form action="/api/message" method="POST" id="addMessage">
+          <h4>Добавить сообщение</h4>
+          <label>
+            Текст: <textarea name="text" rows="4"></textarea>
+          </label>
+          <label>
+            Автор: <input name="author">
+          </label>
+          <button>разместить сообщение</button>
+        </form>
 
-    <ul id="messages">
-      <li class="message">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam officia rem! Praesentium adipisci quas est asperiores eveniet, atque magni reprehenderit voluptate iste nesciunt odit perferendis eligendi corrupti, ratione accusamus!</p>
-        <div class="info-row">
-          <h5>Author Name</h5>
-          <h6>2022-02-09 11:50</h6>
-        </div>
-      </li>
+        <h1>Доска сообщений</h1>
 
-      <li class="message">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam officia rem! Praesentium adipisci quas est asperiores eveniet, atque magni reprehenderit voluptate iste nesciunt odit perferendis eligendi corrupti, ratione accusamus!</p>
-        <div class="info-row">
-          <h5>Author Name</h5>
-          <h6>2022-02-09 11:50</h6>
-        </div>
-      </li>
+        <ul id="messages">
+          <li class="message">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam officia rem! Praesentium adipisci quas est asperiores eveniet, atque magni reprehenderit voluptate iste nesciunt odit perferendis eligendi corrupti, ratione accusamus!</p>
+            <div class="info-row">
+              <h5>Author Name</h5>
+              <h6>2022-02-09 11:50</h6>
+            </div>
+          </li>
 
-      <li class="message">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam officia rem! Praesentium adipisci quas est asperiores eveniet, atque magni reprehenderit voluptate iste nesciunt odit perferendis eligendi corrupti, ratione accusamus!</p>
-        <div class="info-row">
-          <h5>Author Name</h5>
-          <h6>2022-02-09 11:50</h6>
-        </div>
-      </li>
-    </ul>
+          <li class="message">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam officia rem! Praesentium adipisci quas est asperiores eveniet, atque magni reprehenderit voluptate iste nesciunt odit perferendis eligendi corrupti, ratione accusamus!</p>
+            <div class="info-row">
+              <h5>Author Name</h5>
+              <h6>2022-02-09 11:50</h6>
+            </div>
+          </li>
+
+          <li class="message">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam officia rem! Praesentium adipisci quas est asperiores eveniet, atque magni reprehenderit voluptate iste nesciunt odit perferendis eligendi corrupti, ratione accusamus!</p>
+            <div class="info-row">
+              <h5>Author Name</h5>
+              <h6>2022-02-09 11:50</h6>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
   </div>
 </body>
 
