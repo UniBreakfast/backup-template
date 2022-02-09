@@ -1,9 +1,10 @@
 const { createServer } = require('http')
 const handleApi = require('./handleApi')
 const serveFile = require('./serveFile')
+const ssrHandled = require('./prepAndServe')
 
-const server = createServer(handleRequest)
 const port = process.env.PORT || 3000
+const server = createServer(handleRequest)
 
 
 server.listen(port, notifyOnStart)

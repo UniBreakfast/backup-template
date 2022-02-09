@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <link rel="stylesheet" href="css/mb.css">
+  <script src="js/mb.js" defer></script>
+
+  <title>Доска объявлений</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="about">О себе</a></li>
+          <li><a href="numbers">Средние числа</a></li>
+          <li>
+            <a href="https://github.com/UniBreakfast/backup-template">
+              Репозиторий на GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <form action="/api/message" method="POST" id="addMessage">
+      <h3>Добавить сообщение</h3>
+      <label>
+        Текст: <input name="text">
+      </label>
+      <label>
+        Автор: <input name="author">
+      </label>
+      <button>разместить сообщение</button>
+    </form>
+
+    <ul id="messages">
+      <li class="message">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam officia rem! Praesentium adipisci quas est asperiores eveniet, atque magni reprehenderit voluptate iste nesciunt odit perferendis eligendi corrupti, ratione accusamus!</p>
+        <div class="info-row">
+          <h5>Author Name</h5>
+          <h6>2022-02-09 11:50</h6>
+        </div>
+      </li>
+
+      <li class="message">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam officia rem! Praesentium adipisci quas est asperiores eveniet, atque magni reprehenderit voluptate iste nesciunt odit perferendis eligendi corrupti, ratione accusamus!</p>
+        <div class="info-row">
+          <h5>Author Name</h5>
+          <h6>2022-02-09 11:50</h6>
+        </div>
+      </li>
+
+      <li class="message">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nam officia rem! Praesentium adipisci quas est asperiores eveniet, atque magni reprehenderit voluptate iste nesciunt odit perferendis eligendi corrupti, ratione accusamus!</p>
+        <div class="info-row">
+          <h5>Author Name</h5>
+          <h6>2022-02-09 11:50</h6>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
