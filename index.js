@@ -1,5 +1,5 @@
 const { createServer } = require('http')
-const handleApi = require('./handleApi.js')
+const handleApi = require('./handleApi')
 const serveFile = require('./serveFile')
 
 const server = createServer(handleRequest)
