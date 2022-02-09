@@ -1,0 +1,15 @@
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+img {
+  float: right;
+  margin-left: 10px;
+  width: 50%;
+  max-width: 300px;
+}
