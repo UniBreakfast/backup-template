@@ -13,7 +13,8 @@ function handleRequest(req, resp) {
   const { method, url } = req
 
   if (url.startsWith('/api/')) handleApi(method, url.slice(5), resp)
-  else serveFile('public' + url, resp)
+  else if (url in ssrHandled) ssrHandled[url](resp)
+  else serveFile(url, resp)
 }
 
 function notifyOnStart() {
