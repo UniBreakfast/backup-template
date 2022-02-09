@@ -28,7 +28,57 @@
       </nav>
     </header>
 
+    <main>
+      <div class="container">
+        <form action="/api/average" method="POST" id="averageForm">
+          <h3>Рассчитать среднее число</h3>
 
+          <label>
+            <input name="number" type="number" placeholder="следующее число">
+          </label>
+          <label>
+            <input name="negative" type="checkbox"> отрицательное
+          </label>
+          <label>
+            <input name="float" type="checkbox"> дробное
+          </label>
+
+          <button>отправить и получить среднее</button>
+        </form>
+
+        <h2>История вычислений средних чисел</h2>
+
+        <table>
+          <tbody>
+            <tr>
+              <td><span>прошлое:</span> &nbsp; 10</td>
+              <td><span>очередное:</span> &nbsp; 20</td>
+              <td><span>среднее:</span> &nbsp; 15</td>
+            </tr>
+            <tr>
+              <td><span>прошлое:</span> &nbsp; 10</td>
+              <td><span>очередное:</span> &nbsp; 20</td>
+              <td><span>среднее:</span> &nbsp; 15</td>
+            </tr>
+            <tr>
+              <td><span>прошлое:</span> &nbsp; 10</td>
+              <td><span>очередное:</span> &nbsp; 20</td>
+              <td><span>среднее:</span> &nbsp; 15</td>
+            </tr>
+            <tr>
+              <td><span>прошлое:</span> &nbsp; 10</td>
+              <td><span>очередное:</span> &nbsp; 20</td>
+              <td><span>среднее:</span> &nbsp; 15</td>
+            </tr>
+            <tr>
+              <td><span>прошлое:</span> &nbsp; 10</td>
+              <td><span>очередное:</span> &nbsp; 20</td>
+              <td><span>среднее:</span> &nbsp; 15</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
   </div>
 </body>
 
