@@ -1,0 +1,52 @@
+body {
+  font: 18px Trebuchet MS, Helvetica, Arial, sans-serif;
+  background: cornsilk;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:link, :visited {
+  color: unset;
+  text-decoration: unset;
+}
+
+header {
+  padding: 3px;
+  background: #320;
+  color: cornsilk
+}
+
+nav>ul {
+  display: flex;
+  justify-content: center;
+  gap: 0 10px;
+  flex-wrap: wrap;
+}
+
+nav li {
+  white-space: nowrap;
+}
+
+nav a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  padding: 0 15px;
+}
+
+nav li:hover {
+  background: #630;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 0 15px;
+}
