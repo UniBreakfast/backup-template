@@ -37,6 +37,17 @@ tr {
   height: 30px;
 }
 
+td {
+  position: relative;
+}
+
+tr:first-child:not(:hover)>td:nth-child(2)::after {
+  content: "последнее: ";
+  position: absolute;
+  left: 0;
+}
+
+
 main a {
   display: block;
   text-align: center;
