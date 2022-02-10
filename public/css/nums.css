@@ -1,4 +1,3 @@
-
 form {
   text-align: center;
 }
@@ -16,11 +15,24 @@ form>:not(h3) {
   margin: 8px;
 }
 
+form input {
+  text-align: right;
+}
+
+form ::-webkit-outer-spin-button,
+form ::-webkit-inner-spin-button {
+  margin-left: 10px;
+}
+
 table {
   width: 100%;
-
+  border-collapse: collapse;
 }
 
 tr:not(:hover) span {
   visibility: hidden;
+}
+
+tr {
+  height: 30px;
 }

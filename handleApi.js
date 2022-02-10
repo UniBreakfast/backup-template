@@ -1,31 +1,46 @@
 module.exports = handleApi
 
 
-const routes = {message, average, numbers}
+const routes = { message, average, numbers }
 const numHistory = []
 
 
-function handleApi(method, endpoint, resp) {
-  if (endpoint in routes) routes[endpoint](method, resp)
+function handleApi(endpoint, req, resp) {
+  if (endpoint in routes) routes[endpoint](req, resp)
   else resp.end(tellAPImiss(endpoint))
 }
 
-function average(method, resp) {
-  if (method != 'POST') {
+function average(req, resp) {
+  if (req.method != 'POST') {
     resp.end(tellErrors(`icorrect method ${method}, it should be POST`))
   }
-  resp.end('{"prevNum": 10, "lastNum": 20, "average": 15}')
+
+  getBody(req).then(JSON.parse)
+    .then(({ number, negative, float }) => {
+      let lastNum = Math.abs(number)
+      if (negative) lastNum = -lastNum
+      if (!float) lastNum = Math.trunc(lastNum)
+
+      const prevNum = numHistory.at(-1)?.lastNum ?? 0
+      const average = (prevNum + lastNum) / 2
+      const numObj = { prevNum, lastNum, average }
+
+      numHistory.push(numObj)
+
+      resp.end(JSON.stringify(numObj))
+    })
+
 }
 
-function numbers(method, resp) {
-  if (method != 'GET') {
+function numbers(req, resp) {
+  if (req.method != 'GET') {
     resp.end(tellErrors(`icorrect method ${method}, it should be GET`))
   }
-  resp.end('[{"prevNum": 10, "lastNum": 20, "average": 15}, {"prevNum": 10, "lastNum": 20, "average": 15}]')
+  resp.end(JSON.stringify(numHistory))
 }
 
-function message(method, resp) {
-  if (method != 'POST') {
+function message(req, resp) {
+  if (req.method != 'POST') {
     resp.end(tellErrors(`icorrect method ${method}, it should be POST`))
   }
   resp.end()
@@ -42,5 +57,11 @@ function tellAPImiss(endpoint) {
 }
 
 function tellErrors(...errors) {
-  return JSON.stringify({errors})
+  return JSON.stringify({ errors })
+}
+
+async function getBody(stream) {
+  chunks = []
+  for await (const chunk of stream) chunks.push(chunk)
+  return Buffer.concat(chunks).toString()
 }

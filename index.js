@@ -11,9 +11,9 @@ server.listen(port, notifyOnStart)
 
 
 function handleRequest(req, resp) {
-  const { method, url } = req
+  const { url } = req
 
-  if (url.startsWith('/api/')) handleApi(method, url.slice(5), resp)
+  if (url.startsWith('/api/')) handleApi(url.slice(5), req, resp)
   else if (url in ssrHandled) ssrHandled[url](resp)
   else serveFile(url, resp)
 }
