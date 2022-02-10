@@ -2,6 +2,7 @@ module.exports = handleApi
 
 
 const routes = { message, average, numbers }
+const messages = require('./messages')
 const numHistory = []
 
 
@@ -42,9 +43,14 @@ function message(req, resp) {
   if (req.method != 'POST') {
     resp.end(tellErrors(`icorrect method ${method}, it should be POST`))
   }
-  resp.end()
-}
 
+  getBody(req).then(JSON.parse)
+    .then(({text, author}) => {
+      messages.push({text, author, datetime: JSON.stringify(new Date)})
+      return messages.save()
+    })
+    .then(() => resp.end())
+}
 
 function tellAPImiss(endpoint) {
   return `

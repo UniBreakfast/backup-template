@@ -17,12 +17,14 @@ form>* {
 }
 
 form textarea {
+  padding: 5px 10px;
   resize: none;
   width: calc(min(98vw, 1200px) - 115px);
   margin-left: 5px;
 }
 
 form input {
+  padding-left: 10px;
   width: calc(min(98vw, 1200px) - 400px);
   min-width: 200px;
   margin-left: 5px;
