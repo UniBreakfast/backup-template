@@ -36,3 +36,8 @@ tr:not(:hover) span {
 tr {
   height: 30px;
 }
+
+main a {
+  display: block;
+  text-align: center;
+}

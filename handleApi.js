@@ -29,7 +29,6 @@ function average(req, resp) {
 
       resp.end(JSON.stringify(numObj))
     })
-
 }
 
 function numbers(req, resp) {
