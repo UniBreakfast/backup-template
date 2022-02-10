@@ -41,14 +41,36 @@ td {
   position: relative;
 }
 
-tr:first-child:not(:hover)>td:nth-child(2)::after {
-  content: "последнее: ";
-  position: absolute;
-  left: 0;
-}
-
 
 main a {
   display: block;
   text-align: center;
+}
+
+@media (hover: hover) {
+  thead {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  tr span {
+    display: none;
+  }
+
+  tr:nth-child(even) {
+    background: #9441;
+  }
+
+  td {
+    text-align: center;
+  }
+}
+
+@media (min-width: 650px) {
+  tr:first-child:not(:hover)>td:nth-child(2)::after {
+    content: "последнее: ";
+    position: absolute;
+    left: 0;
+  }
 }
