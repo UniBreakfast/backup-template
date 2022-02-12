@@ -17,7 +17,7 @@ function renderMessages(html) {
 function renderMessage(message) {
   const {id, text, author, datetime} = message
   return `
-    <li class="message">
+    <li class="message" style="background: ${genColor(author)}">
       <p>${text}</p>
       <div class="info-row">
         <h5>${author}</h5>
@@ -31,4 +31,12 @@ function renderMessage(message) {
 function format(datetime) {
   return datetime.replace('T', ' ').slice(0, -8)
 }
-'2022-02-09 11:50'
+
+function genColor(str) {
+  if (genColor.cache[str]) return genColor.cache[str]
+
+  const hue = [...str].map(char => char.charCodeAt())
+    .reduce((a, b) => a + b)
+  return genColor.cache[str] = `hsl(${hue/2}, 75%, 91%)`
+}
+genColor.cache = {}
