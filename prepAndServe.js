@@ -15,7 +15,7 @@ function renderMessages(html) {
 }
 
 function renderMessage(message) {
-  const {text, author, datetime} = message
+  const {id, text, author, datetime} = message
   return `
     <li class="message">
       <p>${text}</p>
@@ -23,6 +23,7 @@ function renderMessage(message) {
         <h5>${author}</h5>
         <h6>${format(datetime)}</h6>
       </div>
+      <button class="cross" data-id="${id}">&times;</button>
     </li>
   `
 }

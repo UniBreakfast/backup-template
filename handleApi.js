@@ -40,16 +40,26 @@ function numbers(req, resp) {
 }
 
 function message(req, resp) {
-  if (req.method != 'POST') {
-    resp.end(tellErrors(`icorrect method ${method}, it should be POST`))
-  }
-
-  getBody(req).then(JSON.parse)
+  if (req.method == 'POST') {
+    getBody(req).then(JSON.parse)
     .then(({text, author}) => {
-      messages.push({text, author, datetime: JSON.stringify(new Date)})
+      messages.add({text, author})
       return messages.save()
     })
     .then(() => resp.end())
+
+  } else if (req.method == 'DELETE') {
+    getBody(req).then(JSON.parse)
+    .then(({id}) => {
+      messages.remove(id)
+      return messages.save()
+    })
+    .then(() => resp.end())
+
+  } else {
+    resp.end(tellErrors(`icorrect method ${method}, it should be POST or DELETE`))
+
+  }
 }
 
 function tellAPImiss(endpoint) {

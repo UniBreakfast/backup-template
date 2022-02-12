@@ -7,3 +7,15 @@ addMsgForm.onsubmit = e => {
     if (resp.ok) location.reload()
   })
 }
+
+messages.onclick = e => {
+  const { id } = e.target.dataset
+  if (!id) return
+  const { action } = addMsgForm
+  const method = 'DELETE'
+  const body = JSON.stringify({id})
+
+  fetch(action, { method, body }).then(resp => {
+    if (resp.ok) location.reload()
+  })
+}
