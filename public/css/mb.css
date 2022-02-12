@@ -36,7 +36,7 @@ form button {
 }
 
 .message {
-  border-radius: 2vw;
+  border-radius: 2vw 1vw 2vw 2vw;
   border: 2px solid #630;
   margin-bottom: 12px;
   padding: 0 15px;
@@ -51,6 +51,11 @@ form button {
   color: red;
   right: 6px;
   top: 0;
+  transition: 0.5s;
+}
+.message .cross:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .info-row {
