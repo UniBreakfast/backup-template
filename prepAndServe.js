@@ -36,7 +36,7 @@ function genColor(str) {
   if (genColor.cache[str]) return genColor.cache[str]
 
   const hue = [...str].map(char => char.charCodeAt())
-    .reduce((a, b) => a + b)
+    .reduce((a, b) => a + b, 0)
   return genColor.cache[str] = `hsl(${hue/2}, 75%, 91%)`
 }
 genColor.cache = {}
