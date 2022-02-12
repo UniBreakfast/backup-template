@@ -18,9 +18,9 @@ function renderMessage(message) {
   const {id, text, author, datetime} = message
   return `
     <li class="message" style="background: ${genColor(author)}">
-      <p>${text}</p>
+      <p>${toText(text)}</p>
       <div class="info-row">
-        <h5>${author}</h5>
+        <h5>${toText(author)}</h5>
         <h6>${format(datetime)}</h6>
       </div>
       <button class="cross" data-id="${id}">&times;</button>
@@ -40,3 +40,7 @@ function genColor(str) {
   return genColor.cache[str] = `hsl(${hue/2}, 75%, 91%)`
 }
 genColor.cache = {}
+
+function toText(str) {
+  return str.replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+}
